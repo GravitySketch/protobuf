@@ -3,6 +3,7 @@ bin
 obj
 project.lock.json
 TestResult.xml
+src/.idea/
 
 # Possibly legacy now?
 mono/bin
