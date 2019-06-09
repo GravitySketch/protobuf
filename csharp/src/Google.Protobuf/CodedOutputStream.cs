@@ -178,23 +178,8 @@ namespace Google.Protobuf
         /// <param name="value">The value to write</param>
         public void WriteFloat(float value)
         {
-            byte[] rawBytes = BitConverter.GetBytes(value);
-            if (!BitConverter.IsLittleEndian)
-            {
-                ByteArray.Reverse(rawBytes);
-            }
-
-            if (limit - position >= 4)
-            {
-                buffer[position++] = rawBytes[0];
-                buffer[position++] = rawBytes[1];
-                buffer[position++] = rawBytes[2];
-                buffer[position++] = rawBytes[3];
-            }
-            else
-            {
-                WriteRawBytes(rawBytes, 0, 4);
-            }
+            uint uintValue = ProtoBitConverter.FloatToUInt32Bits(value);
+            WriteRawLittleEndian32(uintValue);
         }
 
         /// <summary>

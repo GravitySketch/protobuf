@@ -19,6 +19,7 @@
     <RepositoryUrl>https://github.com/google/protobuf.git</RepositoryUrl>
     <IncludeSymbols>true</IncludeSymbols>
     <IncludeSource>true</IncludeSource>
+	<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <!-- 
